@@ -28,6 +28,10 @@
   color: rgb(79 70 229) !important;
 }
 
+[aria-checked="false"] .ant-switch-handle::before {
+  background-color: rgb(79 70 229) !important;
+}
+
 .ant-radio-inner {
   border-color: rgb(79 70 229) !important;
 }
