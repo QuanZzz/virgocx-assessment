@@ -35,3 +35,15 @@
 .ant-radio-checked .ant-radio-inner {
   background-color: rgb(79 70 229) !important;
 }
+
+.ant-checkbox-inner {
+  border-color: rgb(79 70 229) !important;
+}
+
+.ant-checkbox-checked .ant-checkbox-inner {
+  background-color: rgb(79 70 229) !important;
+}
+
+.ant-radio-inner::after {
+  width: 0 !important;
+}
