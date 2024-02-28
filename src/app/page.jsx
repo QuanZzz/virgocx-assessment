@@ -63,7 +63,7 @@ export default function Home() {
             type="text"
             id="first_name_input"
             className="first-name-input mt-4 block rounded-lg px-2.5 pb-2.5 pt-5 w-full text-sm 
-            hover:border-indigo-600 focus:border-indigo-600 border peer
+            hover:border-indigo-600 focus:border-indigo-600 focus:outline-none border peer
             disabled:border-slate-50"
             placeholder=""
             onChange={handleUserOnChange}
@@ -121,7 +121,7 @@ export default function Home() {
             type="primary"
             size="large"
             shape="round"
-            className="bg-indigo-600 w-40"
+            className="w-40"
             disabled={!isEditable}
             onClick={handleUserOnClick}
           >
