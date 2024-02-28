@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.ant-btn {
+  background-color: rgb(79 70 229) !important;
+}
+
+.ant-switch {
+  background-color: rgb(79 70 229) !important;
+}
+
+.ant-radio-input-inner {
+  color: rgb(79 70 229) !important;
+}
+
+.first-name-input:focus {
+  border-color: rgb(79 70 229) !important;
+}
