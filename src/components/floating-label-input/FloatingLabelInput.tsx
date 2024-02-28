@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Input } from "antd";
 import { CheckboxValueType } from "antd/lib/checkbox/Group";
 import { RadioChangeEvent } from "antd/lib/radio";
-import "./FloatingLabelInput.css"; // Make sure to include your custom styles
+import "./FloatingLabelInput.css";
 
 type FloatingLabelInputProps = {
   handleOnChange: (
