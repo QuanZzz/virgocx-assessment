@@ -49,7 +49,7 @@ export default function Home() {
 
   return (
     <Layout>
-      <div className="flex flex-col max-w-[360px] border border-black rounded-xl p-5 bg-white">
+      <div className="flex flex-col max-w-[380px] border border-black rounded-xl p-5 bg-white">
         <div className="flex items-center justify-between">
           <Typography.Text>Editable</Typography.Text>
           <Switch
@@ -64,7 +64,7 @@ export default function Home() {
             id="first_name_input"
             className="first-name-input mt-4 block rounded-lg px-2.5 pb-2.5 pt-5 w-full text-sm 
             hover:border-indigo-600 focus:border-indigo-600 focus:outline-none border peer
-            disabled:border-slate-50"
+            disabled:border-slate-50 disabled:text-slate-200"
             placeholder=""
             onChange={handleUserOnChange}
             value={user.firstName}
@@ -76,7 +76,7 @@ export default function Home() {
             -translate-y-4 scale-75 top-4 z-10 origin-[0] start-2.5 
             peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 
             peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 
-            rtl:peer-focus:left-auto"
+            rtl:peer-focus:left-auto peer-disabled:text-slate-200"
           >
             First Name
           </label>

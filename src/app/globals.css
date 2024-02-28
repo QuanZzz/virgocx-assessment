@@ -20,15 +20,18 @@
   background-color: rgb(79 70 229) !important;
 }
 
+.ant-switch-inner-unchecked {
+  color: rgb(79 70 229) !important;
+}
+
 .ant-switch-handle {
   color: rgb(79 70 229) !important;
 }
 
-.ant-radio-input-inner {
-  color: rgb(79 70 229) !important;
+.ant-radio-inner {
+  border-color: rgb(79 70 229) !important;
 }
 
-.first-name-input:focus {
-  border: solid 1px !important;
-  border-color: rgb(79 70 229) !important;
+.ant-radio-checked .ant-radio-inner {
+  background-color: rgb(79 70 229) !important;
 }
