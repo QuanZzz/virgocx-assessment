@@ -7,6 +7,7 @@ import { RadioChangeEvent } from "antd/lib/radio";
 import { useState, useEffect } from "react";
 import { TOOLS_LIST } from "@/data/toolsList";
 import "./globals.css";
+import FloatingLabelInput from "@/components/floating-label-input/FloatingLabelInput";
 
 export default function Home() {
   const [isEditable, setIsEditable] = useState(true);
@@ -65,30 +66,13 @@ export default function Home() {
           />
         </div>
 
-        <div className="relative">
-          <input
-            type="text"
-            id="first_name_input"
-            className="first-name-input mt-4 block rounded-lg px-2.5 pb-2.5 pt-5 w-full text-sm 
-            hover:border-indigo-600 focus:border-indigo-600 focus:outline-none border peer
-            disabled:border-slate-50 disabled:text-slate-200"
-            placeholder=""
-            onChange={handleUserOnChange}
-            value={user.firstName}
-            disabled={!isEditable}
-          />
-          <label
-            htmlFor="first_name_input"
-            className="mt-4 absolute text-sm text-gray-500 duration-300 transform 
-            -translate-y-4 scale-75 top-4 z-10 origin-[0] start-2.5 
-            peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 
-            peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 
-            rtl:peer-focus:left-auto peer-disabled:text-slate-200"
-          >
-            First Name
-          </label>
-        </div>
-
+        <FloatingLabelInput
+          handleOnChange={handleUserOnChange}
+          value={user.firstName}
+          placeholder=" "
+          label="First Name"
+          disabled={!isEditable}
+        />
         <div className="flex flex-col">
           <Typography.Title level={5} className="pt-4">
             Are you proficient in ReactJS development?
@@ -123,6 +107,7 @@ export default function Home() {
           disabled={!isEditable}
           value={selectedTools}
         />
+
         <div className="w-full flex justify-center pt-10">
           <Button
             type="primary"
