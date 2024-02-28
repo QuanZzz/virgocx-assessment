@@ -2,13 +2,15 @@
 
 import { Layout } from "@/components/Layout";
 import { Switch, Typography, Radio, Checkbox, Button, Space } from "antd";
+import { CheckboxValueType } from "antd/lib/checkbox/Group";
+import { RadioChangeEvent } from "antd/lib/radio";
 import { useState, useEffect } from "react";
 import { TOOLS_LIST } from "@/data/toolsList";
 import "./globals.css";
 
 export default function Home() {
   const [isEditable, setIsEditable] = useState(true);
-  const [selectedTools, setSelectedTools] = useState([]);
+  const [selectedTools, setSelectedTools] = useState<string[]>([]);
   const [user, setUser] = useState({
     firstName: "",
     isProficient: false,
@@ -22,24 +24,29 @@ export default function Home() {
     const selectedValues = selectedIndices
       .map((index) => TOOLS_LIST[index]?.value)
       .filter(Boolean);
-
     setSelectedTools(selectedValues);
   }, [user.toolsUsed]);
 
-  const handleUserOnChange = (e) => {
+  const handleUserOnChange = (
+    e:
+      | CheckboxValueType[]
+      | RadioChangeEvent
+      | React.ChangeEvent<HTMLInputElement>
+  ) => {
+    if (Array.isArray(e)) {
+      const toolsIndices = e.map((value) =>
+        TOOLS_LIST.findIndex((tool) => tool.value === value)
+      );
+      setUser({ ...user, toolsUsed: toolsIndices.join(",") });
+      return;
+    }
+
     if (e.target && e.target.id === "first_name_input") {
       setUser({ ...user, firstName: e.target.value });
     }
 
     if (e.target && e.target.name === "isProficient") {
       setUser({ ...user, isProficient: e.target.value === "yes" });
-    }
-
-    if (Array.isArray(e)) {
-      const toolsIndices = e.map((value) =>
-        TOOLS_LIST.findIndex((tool) => tool.value === value)
-      );
-      setUser({ ...user, toolsUsed: toolsIndices.join(",") });
     }
   };
 
